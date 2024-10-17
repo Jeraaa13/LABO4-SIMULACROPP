@@ -1,0 +1,100 @@
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Alta Pelicula</h2>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <app-tablaactores
+          (actorSeleccionado)="actualizarProtagonista($event)"
+        ></app-tablaactores>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Pelicula</h4>
+        <form (ngSubmit)="agregarPelicula()" #peliculaForm="ngForm">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                required
+                [(ngModel)]="pelicula.nombre"
+                name="nombre"
+              />
+            </div>
+
+            <div class="col-sm-6">
+              <label for="tipo" class="form-label">Tipo</label>
+              <select
+                class="form-select"
+                [(ngModel)]="pelicula.tipo"
+                name="tipo"
+                required
+              >
+                <option value="terror">Terror</option>
+                <option value="comedia">Comedia</option>
+                <option value="amor">Amor</option>
+                <option value="otros">Otros</option>
+              </select>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="fecha" class="form-label">Fecha de Estreno</label>
+              <input
+                type="date"
+                class="form-control"
+                id="fecha"
+                required
+                [(ngModel)]="pelicula.fecha"
+                name="fecha"
+              />
+            </div>
+
+            <div class="col-sm-6">
+              <label for="cantidadPublico" class="form-label"
+                >Cantidad de Público</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="cantidadPublico"
+                required
+                [(ngModel)]="pelicula.cantidadPublico"
+                name="cantidadPublico"
+              />
+            </div>
+
+            <div class="col-12">
+              <label for="foto" class="form-label">Foto URL</label>
+              <input
+                type="text"
+                class="form-control"
+                id="foto"
+                [(ngModel)]="pelicula.foto"
+                name="foto"
+              />
+            </div>
+
+            <div class="col-12">
+              <label for="protagonista" class="form-label">Protagonista</label>
+              <input
+                type="text"
+                class="form-control"
+                id="protagonista"
+                [(ngModel)]="pelicula.protagonista"
+                name="protagonista"
+                readonly
+              />
+            </div>
+          </div>
+          <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">
+            Guardar Película
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>

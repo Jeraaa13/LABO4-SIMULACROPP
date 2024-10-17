@@ -1,0 +1,9 @@
+<div *ngIf="actor; else noActor">
+  <h5>{{ actor.nombre }} {{ actor.apellido }}</h5>
+  <p>Documento: {{ actor.documento }}</p>
+  <p>Edad: {{ actor.edad }}</p>
+  <p>País: {{ actor.pais }}</p>
+</div>
+<ng-template #noActor>
+  <p>Seleccione un actor para ver sus detalles.</p>
+</ng-template>

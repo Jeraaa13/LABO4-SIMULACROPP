@@ -1,0 +1,12 @@
+<div class="container border border-success p-3">
+  <h3>Seleccione un Actor</h3>
+  <ul class="list-group">
+    <li
+      *ngFor="let actor of actores"
+      class="list-group-item"
+      (click)="seleccionarActor(actor)"
+    >
+      {{ actor.nombre + " " + actor.apellido }}
+    </li>
+  </ul>
+</div>

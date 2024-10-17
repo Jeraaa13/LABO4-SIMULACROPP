@@ -1,0 +1,12 @@
+<div class="container border border-success p-3">
+  <h3>Seleccione un país</h3>
+  <div class="list-group overflow-auto" style="max-height: 300px">
+    <li
+      *ngFor="let pais of paises"
+      class="list-group-item"
+      (click)="seleccionarPais(pais)"
+    >
+      {{ pais }}
+    </li>
+  </div>
+</div>

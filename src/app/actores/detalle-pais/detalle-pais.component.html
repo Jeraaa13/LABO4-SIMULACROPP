@@ -1,0 +1,14 @@
+<div *ngIf="detallesPais; else noPais">
+  <h5>{{ detallesPais.name.common }}</h5>
+  <p>Capital: {{ detallesPais.capital[0] }}</p>
+  <p>Población: {{ detallesPais.population | number }}</p>
+  <p>Región: {{ detallesPais.region }}</p>
+  <img
+    [src]="detallesPais.flags.png"
+    [alt]="detallesPais.name.common + ' flag'"
+    class="img-fluid"
+  />
+</div>
+<ng-template #noPais>
+  <p>Seleccione un actor para ver los detalles de su país.</p>
+</ng-template>
